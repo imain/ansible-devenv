@@ -1,0 +1,3 @@
+---
+- import_playbook: rpms.yaml
+- import_playbook: home.yaml

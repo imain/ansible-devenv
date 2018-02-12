@@ -1,0 +1,47 @@
+---
+- name: Setup development software on target host.
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Upgrade system
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install epel release
+      yum:
+        name: epel-release
+
+    - name: Add neovim repo
+      yum_repository:
+        name: neovim
+        description: NeoVim repository
+        baseurl: https://copr-be.cloud.fedoraproject.org/results/dperson/neovim/epel-7-$basearch/
+
+    - name: Install neovim
+      yum:
+        name: neovim
+
+    - name: Install tmate
+      yum:
+        name: https://dprince.fedorapeople.org/tmate-2.2.1-1.el7.centos.x86_64.rpm
+        state: present
+
+    - name: install base packages
+      yum: name={{item}} state=present update_cache=yes
+      with_items:
+        - vim
+        - git
+        - tig
+        - python34-neovim
+        - docker
+        - vim-enhanced
+        - telnet
+        - nc
+        - ruby
+        - rubygems
+        - zsh
+        - tmux
+        - gcc
+
