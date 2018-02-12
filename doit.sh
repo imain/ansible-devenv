@@ -1,7 +1,8 @@
 #!/bin/bash
 
-if ! rpm -q ansible; then
-    sudo yum -y install ansible
+if ! which ansible; then
+  echo "You better get yourself some ansible love! Install it now using your favorite package manager!"
+  exit 1
 fi
 
 rm -f config.tar.gz
