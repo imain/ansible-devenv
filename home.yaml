@@ -32,3 +32,12 @@
         repo: 'https://git.openstack.org/openstack/heat-templates'
         dest: ~/src/
 
+    - name: Git repo for tripleo-quickstart
+      git:
+        repo: 'https://git.openstack.org/openstack/tripleo-quickstart'
+        dest: ~/src/
+
+    - name: Git repo for tripleo-quickstart-extras
+      git:
+        repo: 'https://git.openstack.org/openstack/tripleo-quickstart-extras'
+        dest: ~/src/
