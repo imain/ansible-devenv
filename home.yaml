@@ -20,24 +20,24 @@
     - name: Git repo for undercloud_containers
       git:
         repo: 'https://github.com/dprince/undercloud_containers.git'
-        dest: ~/src/
+        dest: ~/src/undercloud_containers
 
     - name: Git repo for imain vimrc
       git:
         repo: 'https://github.com/imain/vimrc.git'
-        dest: ~/src/
+        dest: ~/src/vimrc
 
     - name: Git repo for tripleo-heat-templates
       git:
         repo: 'https://git.openstack.org/openstack/heat-templates'
-        dest: ~/src/
+        dest: ~/src/heat-templates
 
     - name: Git repo for tripleo-quickstart
       git:
         repo: 'https://git.openstack.org/openstack/tripleo-quickstart'
-        dest: ~/src/
+        dest: ~/src/tripleo-quickstart
 
     - name: Git repo for tripleo-quickstart-extras
       git:
         repo: 'https://git.openstack.org/openstack/tripleo-quickstart-extras'
-        dest: ~/src/
+        dest: ~/src/tripleo-quickstart-extras

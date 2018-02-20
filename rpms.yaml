@@ -24,6 +24,7 @@
       with_items:
         - neovim
         - python34-neovim
+        - python34-typing
 
     - name: Install tmate
       yum:
