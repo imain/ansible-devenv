@@ -20,8 +20,10 @@
         baseurl: https://copr-be.cloud.fedoraproject.org/results/dperson/neovim/epel-7-$basearch/
 
     - name: Install neovim
-      yum:
-        name: neovim
+      yum: name={{item}} state=present update_cache=yes disable_gpg_check=yes
+      with_items:
+        - neovim
+        - python34-neovim
 
     - name: Install tmate
       yum:
@@ -34,7 +36,6 @@
         - vim
         - git
         - tig
-        - python34-neovim
         - docker
         - vim-enhanced
         - telnet
